@@ -317,17 +317,21 @@ showResults.addEventListener("click", () => {
   showResultsSection();
 });
 
-prevSlide.addEventListener("click", () => {
-  slideshowIndex = (slideshowIndex - 1 + photoFiles.length) % photoFiles.length;
-  renderCurrentSlide();
-  restartSlideshowTimer();
-});
+if (prevSlide) {
+  prevSlide.addEventListener("click", () => {
+    slideshowIndex = (slideshowIndex - 1 + photoFiles.length) % photoFiles.length;
+    renderCurrentSlide();
+    restartSlideshowTimer();
+  });
+}
 
-nextSlide.addEventListener("click", () => {
-  slideshowIndex = (slideshowIndex + 1) % photoFiles.length;
-  renderCurrentSlide();
-  restartSlideshowTimer();
-});
+if (nextSlide) {
+  nextSlide.addEventListener("click", () => {
+    slideshowIndex = (slideshowIndex + 1) % photoFiles.length;
+    renderCurrentSlide();
+    restartSlideshowTimer();
+  });
+}
 
 goToFinal.addEventListener("click", () => {
   window.location.href = "final.html";
