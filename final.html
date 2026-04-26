@@ -25,11 +25,34 @@
         <p>I can't believe it's been two years with that girl whom I used to admire from a distant. This year was full of new and adventurous experiences. This year taught us a lot, I respect you for taking all the bullets on yourself, you are really doing great. I wish the dreams and goals we have made will come true soon. I really don't have much to say because i am drunkkk but I must say you are very beautiful and sexy and hotttt... I really love youuu and will keep loving you, I never get tired watching your pictures. <br /><br /><strong>"Happy Two Years, My Lovee!" 💖</strong></p>
       </div>
 
+      <figure class="final-photo panel--soft">
+        <img id="finalPhoto" alt="A random memory of us" />
+      </figure>
+
       <div class="results__prompt panel--soft" style="margin-top: 16px;">
         <p>Come back to the first page anytime if you want to relive the slideshow and quiz.</p>
         <a class="primary-button" href="index.html">Back to the start</a>
       </div>
     </section>
   </main>
+  <script>
+    const finalPhotos = [
+      "20230309_094151.jpg",
+      "IMG-20220911-WA0016.jpg",
+      "IMG-20250531-WA0028.jpg",
+      "IMG-20250601-WA0046.jpg",
+      "IMG20250302145809.jpg",
+      "IMG20250302151945.jpg",
+      "IMG20250728173726.jpg",
+      "IMG20251206152449.jpg",
+      "IMG20251206160921.jpg",
+      "IMG_20240507_233926.jpg",
+      "1000148727_enhanced.jpg.png"
+    ];
+
+    const finalPhoto = document.getElementById("finalPhoto");
+    const randomPhoto = finalPhotos[Math.floor(Math.random() * finalPhotos.length)];
+    finalPhoto.src = randomPhoto;
+  </script>
 </body>
 </html>
