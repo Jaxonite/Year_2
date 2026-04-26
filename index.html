@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Two Years of Us, Tamanna!</title>
+  <meta name="description" content="A romantic anniversary website for Tamanna with a photo slideshow, quiz, and heartfelt finale." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-glow page-glow--one"></div>
+  <div class="page-glow page-glow--two"></div>
+
+  <main class="shell">
+    <section class="hero panel" id="hero">
+      <div class="hero__copy">
+        <p class="eyebrow">Two years. One story.</p>
+        <h1>Happy Two Years of Us, Tamanna!</h1>
+        <p class="lede">
+          A little place for our memories, a few playful questions, and a sweet reminder of how many beautiful years are still ahead.
+        </p>
+      </div>
+
+      <div class="hero__media">
+        <div class="slideshow panel panel--soft" aria-label="Photo slideshow">
+          <div class="slideshow__frame">
+            <img id="slideshowImage" alt="Memories slideshow" />
+            <div class="slideshow__overlay"></div>
+          </div>
+          <div class="slideshow__caption">
+            <span class="slideshow__label">Our memories</span>
+            <span id="slideshowCounter">01 / 11</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__cta">
+        <button class="primary-button" id="beginQuiz" type="button">On to the next many years</button>
+      </div>
+    </section>
+
+    <section class="quiz panel" id="quiz" aria-live="polite">
+      <div class="section-heading">
+        <p class="eyebrow">The mini quiz</p>
+        <h2>Answer a few little things about us</h2>
+        <p>Keep going one card at a time. Your answers stay saved until the end.</p>
+      </div>
+
+      <div class="quiz__steps">
+        <article class="quiz-step active" data-step="0">
+          <div class="quiz-step__meta">
+            <span>Question 1 of 5</span>
+            <h3>When did we meet after coming into this relationship?</h3>
+          </div>
+          <label class="input-group">
+            <span>Choose the date</span>
+            <input id="metDate" type="date" />
+            <p class="field-feedback" id="dateFeedback" aria-live="polite"></p>
+          </label>
+          <div class="step-actions">
+            <button class="secondary-button" data-action="next" type="button">Next question</button>
+          </div>
+        </article>
+
+        <article class="quiz-step" data-step="1">
+          <div class="quiz-step__meta">
+            <span>Question 2 of 5</span>
+            <h3>Arrange what you want for the next 10 anniversaries</h3>
+            <p>Drag cards, or use the arrow buttons. The top choice becomes 2027, then 2028, and so on.</p>
+          </div>
+          <div class="ranking-board">
+            <div class="ranking-board__list" id="rankingList" aria-label="Wishlist ordering list"></div>
+          </div>
+          <div class="step-actions step-actions--spread">
+            <button class="ghost-button" data-action="shuffle" type="button">Reorder randomly</button>
+            <button class="secondary-button" data-action="next" type="button">Next question</button>
+          </div>
+        </article>
+
+        <article class="quiz-step" data-step="2">
+          <div class="quiz-step__meta">
+            <span>Question 3 of 5</span>
+            <h3>Which anniversary vibe should our next big celebration have?</h3>
+          </div>
+          <div class="choice-grid" data-choice-group="vibe">
+            <button class="choice-card" type="button" data-value="beach">Sunset beach escape</button>
+            <button class="choice-card" type="button" data-value="city">City lights and dinner</button>
+            <button class="choice-card" type="button" data-value="villa">Quiet villa retreat</button>
+            <button class="choice-card" type="button" data-value="surprise">A full surprise plan</button>
+          </div>
+          <div class="step-actions">
+            <button class="secondary-button" data-action="next" type="button">Next question</button>
+          </div>
+        </article>
+
+        <article class="quiz-step" data-step="3">
+          <div class="quiz-step__meta">
+            <span>Question 4 of 5</span>
+            <h3>What is one tiny thing you always notice about us?</h3>
+          </div>
+          <label class="input-group">
+            <span>Write a short answer</span>
+            <textarea id="tinyThing" rows="4" placeholder="Something cute, funny, or romantic..."></textarea>
+          </label>
+          <div class="step-actions">
+            <button class="secondary-button" data-action="next" type="button">Next question</button>
+          </div>
+        </article>
+
+        <article class="quiz-step" data-step="4">
+          <div class="quiz-step__meta">
+            <span>Question 5 of 5</span>
+            <h3>Pick the word that best describes us right now</h3>
+          </div>
+          <div class="choice-grid choice-grid--compact" data-choice-group="word">
+            <button class="choice-card" type="button" data-value="soft">Soft</button>
+            <button class="choice-card" type="button" data-value="dreamy">Dreamy</button>
+            <button class="choice-card" type="button" data-value="electric">Electric</button>
+            <button class="choice-card" type="button" data-value="forever">Forever</button>
+          </div>
+          <div class="step-actions">
+            <button class="secondary-button" id="showResults" type="button">See the result</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="results panel" id="results">
+      <div class="section-heading">
+        <p class="eyebrow">Your answers</p>
+        <h2>What you chose for the next years</h2>
+        <p>Screenshot this and send it to me after you see how the years line up.</p>
+      </div>
+
+      <div class="summary-grid">
+        <div class="summary-card">
+          <h3>Meeting date</h3>
+          <p id="summaryDate">Not chosen yet</p>
+        </div>
+        <div class="summary-card">
+          <h3>Anniversary wishlist</h3>
+          <div id="summaryList" class="summary-list"></div>
+        </div>
+      </div>
+
+      <div class="results__prompt panel--soft">
+        <p>Screenshot this and send it to me.</p>
+        <button class="primary-button" id="goToFinal" type="button">Open the next page</button>
+      </div>
+    </section>
+
+    <section class="final panel" id="final">
+      <div class="section-heading">
+        <p class="eyebrow">Last page</p>
+        <h2>A final note</h2>
+      </div>
+      <div class="final-note panel--soft">
+        <p id="finalParagraph">A little paragraph for Tamanna will live here. You can replace this with your own note before publishing.</p>
+      </div>
+    </section>
+  </main>
+
+  <template id="rankingItemTemplate">
+    <div class="ranking-item" draggable="true">
+      <div class="ranking-item__visual">
+        <span class="ranking-item__year">2027</span>
+      </div>
+      <div class="ranking-item__content">
+        <strong></strong>
+        <p></p>
+      </div>
+      <div class="ranking-item__actions">
+        <button type="button" class="icon-button" data-dir="up" aria-label="Move item up">↑</button>
+        <button type="button" class="icon-button" data-dir="down" aria-label="Move item down">↓</button>
+      </div>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
