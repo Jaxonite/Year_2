@@ -50,6 +50,7 @@ const rankingList = document.getElementById("rankingList");
 const rankingTemplate = document.getElementById("rankingItemTemplate");
 const summaryDate = document.getElementById("summaryDate");
 const summaryList = document.getElementById("summaryList");
+const summaryTinyThing = document.getElementById("summaryTinyThing");
 const showResults = document.getElementById("showResults");
 const goToFinal = document.getElementById("goToFinal");
 const finalParagraph = document.getElementById("finalParagraph");
@@ -188,6 +189,7 @@ function renderRanking() {
 
 function renderSummary() {
   summaryDate.textContent = formatDate(state.metDate);
+  summaryTinyThing.textContent = state.tinyThing.trim() || "Not written yet";
   summaryList.innerHTML = "";
 
   state.ranking.forEach((item, index) => {
