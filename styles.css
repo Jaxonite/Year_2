@@ -477,6 +477,10 @@ textarea {
   border: 1px solid rgba(122, 84, 102, 0.08);
 }
 
+.summary-card--wide {
+  grid-column: 1 / -1;
+}
+
 .summary-list {
   display: grid;
   gap: 10px;
@@ -508,6 +512,21 @@ textarea {
   margin: 0;
   max-width: 54ch;
   font-size: 1.1rem;
+}
+
+.final-photo {
+  margin: 16px 0 0;
+  padding: 16px;
+  border-radius: 22px;
+}
+
+.final-photo img {
+  width: 100%;
+  max-height: 620px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px;
 }
 
 [hidden] {
